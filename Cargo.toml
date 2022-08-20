@@ -26,3 +26,6 @@ maintenance = { status = "actively-developed" }
 default = []
 unsafe = []
 dox = []
+
+[dependencies]
+bitfield = "0.14.0"

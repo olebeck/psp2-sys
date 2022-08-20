@@ -30,11 +30,16 @@ pub enum SceDisplaySetBufSync {
 #[repr(C)]
 pub struct SceDisplayFrameBuf {
     pub size: SceSize,          //  sizeof(SceDisplayFrameBuf)
-    pub base: *mut crate::void, //  Pointer to framebuffer
+    pub base: *const crate::void, //  Pointer to framebuffer
     pub pitch: u32,             //  pitch pixels
     pub pixelformat: u32,       //  pixel format (one of ::SceDisplayPixelFormat)
     pub width: u32,             //  framebuffer width
     pub height: u32,            //  framebuffer height
+}
+
+#[repr(C)]
+pub struct display_queue_callback_data {
+    pub base_addr: *const crate::void
 }
 
 #[cfg_attr(
